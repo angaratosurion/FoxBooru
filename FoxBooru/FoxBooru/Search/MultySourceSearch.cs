@@ -9,8 +9,7 @@ namespace FoxBooru.Search
 {
     public class MultySourceSearch
     {
-        SearchBooru[] engines = { new Gelbooru(), new Danbooru(), new Furry(), new Konachan(), new Rule34(), new Safebooru(), new sizebooru(),
-       new Xbooru() ,new Yandere() };
+        SearchBooru[] engines = { new Gelbooru(), new Danbooru(),  new Konachan(),  new Yandere() };
     public List<ImageInfo> Search (SearchOption option)
         {
             try

@@ -47,7 +47,6 @@
     <Compile Include="Models\ApiObject.cs" />
     <Compile Include="Models\ApiResult.cs" />
     <Compile Include="Models\EngineIDs.cs" />
-    <Compile Include="EshuushuuOptions.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Models\ImageInfo.cs" />
     <Compile Include="Models\SearchResult.cs" />

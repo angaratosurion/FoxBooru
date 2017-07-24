@@ -30,10 +30,11 @@ namespace FoxBooru
                         {
                             ImageInfo img = new ImageInfo();
                             img.Rating = Helper.ToRating(resuls.Value<String>("rating"));
+                            
                             img.Id = resuls.Value<String>("id");
                             img.md5 = resuls.Value<String>("md5");
                             img.Source = resuls.Value<String>("source");
-                            img.Created_At = resuls.Value<DateTime>("created_at");
+                            img.Created_At = resuls.Value<String>("created_at");
                             img.OrigFileSize = resuls.Value<long>("file_size");
                             img.OrigWidth = resuls.Value <int > ("width");
                             img.OrigHeight = resuls.Value<int>("height");

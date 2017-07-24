@@ -77,8 +77,8 @@ namespace FoxBooru.Search
         {
             List<ImageInfo> lstResult = new List<ImageInfo>();
             
-            JsonTextReader reader = new JsonTextReader(new StringReader(body));
-            reader.SupportMultipleContent = true;
+          //  JsonTextReader reader = new JsonTextReader(new StringReader(body));
+           // reader.SupportMultipleContent = true;
             List<ImageInfo> linf= new List<ImageInfo>();
 
            
@@ -89,10 +89,11 @@ namespace FoxBooru.Search
 
                 //var info = serializer.Deserialize< ImageInfo[]>(reader);
                 PartialDeserialization des = new PartialDeserialization();
+                var enid = this.EngineID;
                 var info=des.Desrialise(body);
 
                 //ImageInfo info = new ImageInfo();
-
+                
                 // info.EngineID = this.EngineID;
                 //info.Rating = Helper.ToRating(jsonObject.GetString("q"));
                 linf.AddRange((ImageInfo[])info.ToArray());
@@ -106,7 +107,7 @@ namespace FoxBooru.Search
 
                     if (dtfailed)
                     {
-                        info.Created_At = DateTime.Now;
+                        info.Created_At = DateTime.Now.ToLongDateString();
                     }
                     else
                     {
@@ -121,7 +122,7 @@ namespace FoxBooru.Search
                         //}
                     }
 
-
+                    info.EngineID = this.EngineID;
 
 
                     this.CheckURL((ImageInfo)info);

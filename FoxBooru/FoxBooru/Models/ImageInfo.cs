@@ -13,9 +13,10 @@ namespace FoxBooru.Models
         public string Id { get; set; }
         
         
-		public DateTime Created_At		{ get; set; }
+		public String Created_At		{ get; set; }
 
 		public string	Source			{ get; set; }
+        public string Extention { get; set; }
         public string md5 { get; set; }
         [JsonIgnore]
         public Ratings Rating { get; set; }

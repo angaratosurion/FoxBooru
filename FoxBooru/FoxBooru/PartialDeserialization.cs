@@ -12,7 +12,7 @@ namespace FoxBooru
     {
         public List<ImageInfo> Desrialise(String json)
         {
-            //try
+             try
             {
                 List<ImageInfo> ap = null;
                 int i = -1;
@@ -45,9 +45,15 @@ namespace FoxBooru
                     }
                 }
                 return ap;
-                //}
+                }
+            catch (Exception ex)
+            {
 
+                Base.ErrorReporting(ex);
+                return null;
             }
+
+        }
         }
     }
-}
+

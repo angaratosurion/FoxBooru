@@ -14,8 +14,10 @@ namespace FoxBooru
 		private static readonly DateTime DateTime1970 = new DateTime(1970, 1, 1, 0, 0, 0);
 		public static DateTime ParseDateTime(long date)
 		{
-			return DateTime.SpecifyKind(DateTime1970.AddSeconds(date), DateTimeKind.Local);
-		}
+             
+                return DateTime.SpecifyKind(DateTime1970.AddSeconds(date), DateTimeKind.Local);
+            
+        }
 		private static readonly string DateFormat =  "ddd MMM dd HH:mm:ss zzz yyyy";
 		public static DateTime ParseDateTime(string data)
 		{
@@ -23,43 +25,61 @@ namespace FoxBooru
 		}
 		public static string GetQuotationMarkedTag(string tag)
 		{
-			if (tag.Length > 0)
-			{
-				StringBuilder sb = new StringBuilder(tag.Length);
-				sb.Append("\"");
-				for (int i = 0; i < tag.Length; i++)
-					if (tag[i] == ' ')
-						sb.Append("\" \"");
-					else
-						sb.Append(tag[i]);
-				sb.Append("\"");
+            try
+            {
+                if (tag.Length > 0)
+                {
+                    StringBuilder sb = new StringBuilder(tag.Length);
+                    sb.Append("\"");
+                    for (int i = 0; i < tag.Length; i++)
+                        if (tag[i] == ' ')
+                            sb.Append("\" \"");
+                        else
+                            sb.Append(tag[i]);
+                    sb.Append("\"");
 
-				return sb.ToString();
-			}
-			else
-			{
-				return null;
-			}
-		}
+                    return sb.ToString();
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Base.ErrorReporting(ex);
+                return null;
+            }
+        }
 		public static string StringFromStream(Stream stream)
 		{
-			string r;
-			using (MemoryStream memoryStream = new MemoryStream())
-			{
-				byte[] buff = new byte[4096];
-				int read;
+            try
+            {
+                string r;
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    byte[] buff = new byte[4096];
+                    int read;
 
-				while ((read = stream.Read(buff, 0, 4096)) > 0)
-					memoryStream.Write(buff, 0, read);
-				memoryStream.Flush();
+                    while ((read = stream.Read(buff, 0, 4096)) > 0)
+                        memoryStream.Write(buff, 0, read);
+                    memoryStream.Flush();
 
-				r = Encoding.UTF8.GetString(memoryStream.ToArray());
+                    r = Encoding.UTF8.GetString(memoryStream.ToArray());
 
-				memoryStream.Dispose();
-			}
+                    memoryStream.Dispose();
+                }
 
-			return r;
-		}
+                return r;
+            }
+            catch (Exception ex)
+            {
+
+                Base.ErrorReporting(ex);
+                return null;
+            }
+        }
 
 		public static IList<string> MakeTagList()
 		{
@@ -67,23 +87,35 @@ namespace FoxBooru
 		}
 		public static IList<string> MakeTagList(string tags)
 		{
-			if (String.IsNullOrEmpty(tags))
-				return null;
-			else
-				return new List<string>(tags.Trim().Split(' ')).AsReadOnly();
-		}
+            try
+            {
+                if (String.IsNullOrEmpty(tags))
+                    return null;
+                else
+                    return new List<string>(tags.Trim().Split(' ')).AsReadOnly();
+            }
+            catch (Exception ex)
+            {
+
+                Base.ErrorReporting(ex);
+                return null;
+            }
+        }
 
 		public static Ratings ToRating(string rating)
 		{
-			switch (rating)
-			{
-				case "s": return Ratings.Safe;
-				case "q": return Ratings.Questionable;
-				case "e": return Ratings.Explicit;
-			}
+            
+                switch (rating)
+                {
+                    case "s": return Ratings.Safe;
+                    case "q": return Ratings.Questionable;
+                    case "e": return Ratings.Explicit;
+                }
 
-			return Ratings.All;
-		}
+                return Ratings.All;
+            
+             
+        }
 
 		public static bool CompareRating(Ratings searchRating, string targetRating)
 		{
@@ -143,60 +175,89 @@ namespace FoxBooru
 
 		public static string GetString(this XmlNode node, params string[] key)
 		{
-			XmlAttribute attr;
-			for (int i = 0; i < key.Length; ++i)
-			{
-				attr = node.Attributes[key[i]];
-				if (attr != null)
-					return attr.Value;
-			}
+            try
+            {
+                XmlAttribute attr;
+                for (int i = 0; i < key.Length; ++i)
+                {
+                    attr = node.Attributes[key[i]];
+                    if (attr != null)
+                        return attr.Value;
+                }
 
-			return null;
-		}
+                return null;
+            }
+            catch (Exception ex)
+            {
+
+                Base.ErrorReporting(ex);
+                return null;
+            }
+        }
 		public static int GetInt32(this XmlNode node, params string[] key)
 		{
-			XmlAttribute attr;
-			for (int i = 0; i < key.Length; ++i)
-			{
-				attr = node.Attributes[key[i]];
-				if (attr != null)
-					return Convert.ToInt32(attr.Value);
-			}
+            try
+            {
+                XmlAttribute attr;
+                for (int i = 0; i < key.Length; ++i)
+                {
+                    attr = node.Attributes[key[i]];
+                    if (attr != null)
+                        return Convert.ToInt32(attr.Value);
+                }
 
-			return 0;
-		}
+                return 0;
+            }
+            catch (Exception ex)
+            {
+
+                Base.ErrorReporting(ex);
+                return -1;
+            }
+        }
 		public static long GetInt64(this XmlNode node, params string[] key)
 		{
-			XmlAttribute attr;
-			for (int i = 0; i < key.Length; ++i)
-			{
-				attr = node.Attributes[key[i]];
-				if (attr != null)
-					return Convert.ToInt64(attr.Value);
-			}
+            try
+            {
+                XmlAttribute attr;
+                for (int i = 0; i < key.Length; ++i)
+                {
+                    attr = node.Attributes[key[i]];
+                    if (attr != null)
+                        return Convert.ToInt64(attr.Value);
+                }
 
-			return 0;
-		}
+                return 0;
+            }
+            catch (Exception ex)
+            {
+
+                Base.ErrorReporting(ex);
+                return -1;
+            }
+        }
 		public static DateTime GetDateTime(this XmlNode node, params string[] key)
 		{
-			XmlAttribute attr;
-			int n;
-			long l;
-			for (int i = 0; i < key.Length; ++i)
-			{
-				attr = node.Attributes[key[i]];
+             
+                XmlAttribute attr;
+                int n;
+                long l;
+                for (int i = 0; i < key.Length; ++i)
+                {
+                    attr = node.Attributes[key[i]];
 
-				if (attr != null)
-					if (int.TryParse(attr.Value, out n))
-						return ParseDateTime((long)n);
-					else if (long.TryParse(attr.Value, out l))
-						return ParseDateTime(l);
-					else
-						return ParseDateTime(attr.Value);
-			}
+                    if (attr != null)
+                        if (int.TryParse(attr.Value, out n))
+                            return ParseDateTime((long)n);
+                        else if (long.TryParse(attr.Value, out l))
+                            return ParseDateTime(l);
+                        else
+                            return ParseDateTime(attr.Value);
+                }
 
-			return DateTime.MinValue;
-		}
+                return DateTime.MinValue;
+            
+        }
 		public static IList<string> GetTagList(this XmlNode node, params string[] key)
 		{
 			return MakeTagList(node.GetString(key));

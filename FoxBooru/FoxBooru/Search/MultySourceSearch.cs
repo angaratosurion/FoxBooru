@@ -28,11 +28,11 @@ namespace FoxBooru.Search
                 return ap;
 
             }
-            catch (Exception)
+            catch (Exception ex)  
             {
 
-                throw;
-               // return null;
+                Base.ErrorReporting(ex);
+                return null;
             }
         }
 

@@ -20,15 +20,23 @@ namespace FoxBooru.Search
 
         public SearchBooru(string searchURL, string tagName, string pageName, string limitName, bool isJson)
         {
-            this.BaseURL = new Uri(searchURL).GetLeftPart(UriPartial.Authority);
-            if (this.BaseURL[this.BaseURL.Length - 1] == '/')
-                this.BaseURL = this.BaseURL.Substring(0, this.BaseURL.Length - 1);
+            try
+            {
+                this.BaseURL = new Uri(searchURL).GetLeftPart(UriPartial.Authority);
+                if (this.BaseURL[this.BaseURL.Length - 1] == '/')
+                    this.BaseURL = this.BaseURL.Substring(0, this.BaseURL.Length - 1);
 
-            this.SearchURL = searchURL;
-            this.TagsName = tagName; //searchURL WHAAAAT
-            this.PageName = pageName;
-            this.LimitName = limitName;
-            this.isJson = isJson=true;
+                this.SearchURL = searchURL;
+                this.TagsName = tagName; //searchURL WHAAAAT
+                this.PageName = pageName;
+                this.LimitName = limitName;
+                this.isJson = isJson = true;
+            }
+            catch (Exception ex)
+            {
+
+                Base.ErrorReporting(ex);
+            }
         }
 
         internal override byte[] RequestBody(Models.SearchOption option)
@@ -38,102 +46,129 @@ namespace FoxBooru.Search
 
         internal override Uri RequestURL(Models.SearchOption option)
         {
-            StringBuilder sbQuery = new StringBuilder();
+            try
+            {
+                StringBuilder sbQuery = new StringBuilder();
 
-            sbQuery.Append(this.SearchURL);
-            if (this.SearchURL.IndexOf('?') < 0)
-                sbQuery.Append('?');
-            else
-                sbQuery.Append('&');
+                sbQuery.Append(this.SearchURL);
+                if (this.SearchURL.IndexOf('?') < 0)
+                    sbQuery.Append('?');
+                else
+                    sbQuery.Append('&');
 
-            if (!String.IsNullOrEmpty(option.Tags))
-                sbQuery.AppendFormat("{0}={1}&", TagsName, Uri.EscapeUriString(option.Tags));
+                if (!String.IsNullOrEmpty(option.Tags))
+                    sbQuery.AppendFormat("{0}={1}&", TagsName, Uri.EscapeUriString(option.Tags));
 
-            if (option.Page != null)
-                sbQuery.AppendFormat("{0}={1}&", PageName, option.Page.Value);
+                if (option.Page != null)
+                    sbQuery.AppendFormat("{0}={1}&", PageName, option.Page.Value);
 
-            if (option.Limit != null)
-                sbQuery.AppendFormat("{0}={1}&", LimitName, option.Limit.Value);
+                if (option.Limit != null)
+                    sbQuery.AppendFormat("{0}={1}&", LimitName, option.Limit.Value);
 
-            if (sbQuery[sbQuery.Length - 1] == '&')
-                sbQuery.Remove(sbQuery.Length - 1, 1);
+                if (sbQuery[sbQuery.Length - 1] == '&')
+                    sbQuery.Remove(sbQuery.Length - 1, 1);
 
-            if (sbQuery[sbQuery.Length - 1] == '?')
-                sbQuery.Remove(sbQuery.Length - 1, 1);
+                if (sbQuery[sbQuery.Length - 1] == '?')
+                    sbQuery.Remove(sbQuery.Length - 1, 1);
 
-            return new Uri(sbQuery.ToString());
+                return new Uri(sbQuery.ToString());
+            }
+            catch (Exception ex)
+            {
+
+                Base.ErrorReporting(ex);
+                return null;
+            }
         }
 
         internal override IList<ImageInfo> ParseData(string body, Models.SearchOption option)
         {
+            try
+            { 
             if (this.isJson)
                 return this.ParseDataJson(body, option);
             //else
             //    return this.ParseDataXml(body, option);
             return null;
         }
+             catch (Exception ex)
+            {
+
+                Base.ErrorReporting(ex);
+                return null;
+            }
+        }
 
         private IList<ImageInfo> ParseDataJson(string body, Models.SearchOption option)
         {
-            List<ImageInfo> lstResult = new List<ImageInfo>();
-            
-          //  JsonTextReader reader = new JsonTextReader(new StringReader(body));
-           // reader.SupportMultipleContent = true;
-            List<ImageInfo> linf= new List<ImageInfo>();
-
-           
-            bool dtfailed = false;
-         // while (reader.Read())
+            try
             {
-                //JsonSerializer serializer = new JsonSerializer();
+                List<ImageInfo> lstResult = new List<ImageInfo>();
 
-                //var info = serializer.Deserialize< ImageInfo[]>(reader);
-                PartialDeserialization des = new PartialDeserialization();
-                var enid = this.EngineID;
-                var info=des.Desrialise(body);
+                //  JsonTextReader reader = new JsonTextReader(new StringReader(body));
+                // reader.SupportMultipleContent = true;
+                List<ImageInfo> linf = new List<ImageInfo>();
 
-                //ImageInfo info = new ImageInfo();
-                
-                // info.EngineID = this.EngineID;
-                //info.Rating = Helper.ToRating(jsonObject.GetString("q"));
-                linf.AddRange((ImageInfo[])info.ToArray());
 
-            }
-          foreach( var info in linf)
-            {
-                if (Helper.CompareRating(option.Rating, info.Rating))
+                bool dtfailed = false;
+                // while (reader.Read())
                 {
+                    //JsonSerializer serializer = new JsonSerializer();
 
+                    //var info = serializer.Deserialize< ImageInfo[]>(reader);
+                    PartialDeserialization des = new PartialDeserialization();
+                    var enid = this.EngineID;
+                    var info = des.Desrialise(body);
 
-                    if (dtfailed)
-                    {
-                        info.Created_At = DateTime.Now.ToLongDateString();
-                    }
-                    else
-                    {
-                        //try
-                        //{
-                        //    info.CreatedAt = jsonObject.GetDateTime("created_at");
-                        //}
-                        //catch
-                        //{
-                        //    dtfailed = true;
-                        //    info.CreatedAt = DateTime.Now;
-                        //}
-                    }
+                    //ImageInfo info = new ImageInfo();
 
-                    info.EngineID = this.EngineID;
+                    // info.EngineID = this.EngineID;
+                    //info.Rating = Helper.ToRating(jsonObject.GetString("q"));
+                    linf.AddRange((ImageInfo[])info.ToArray());
 
-
-                    this.CheckURL((ImageInfo)info);
-
-                    lstResult.Add((ImageInfo)info);
                 }
-                    }
-                
-            
+                foreach (var info in linf)
+                {
+                    if (Helper.CompareRating(option.Rating, info.Rating))
+                    {
 
-            return lstResult.AsReadOnly();
+
+                        if (dtfailed)
+                        {
+                            info.Created_At = DateTime.Now.ToLongDateString();
+                        }
+                        else
+                        {
+                            //try
+                            //{
+                            //    info.CreatedAt = jsonObject.GetDateTime("created_at");
+                            //}
+                            //catch
+                            //{
+                            //    dtfailed = true;
+                            //    info.CreatedAt = DateTime.Now;
+                            //}
+                        }
+
+                        info.EngineID = this.EngineID;
+
+
+                        this.CheckURL((ImageInfo)info);
+
+                        lstResult.Add((ImageInfo)info);
+                    }
+                }
+
+
+
+                return lstResult.AsReadOnly();
+            }
+            catch (Exception ex)
+            {
+
+                Base.ErrorReporting(ex);
+                return null;
+            }
         }
 
         //private IList<ImageInfo> ParseDataXml(string body, SearchOption option)
@@ -189,21 +224,29 @@ namespace FoxBooru.Search
 
         private void CheckURL(ImageInfo info)
         {
-            if (info.OrigUrl.StartsWith("//"))
-                info.OrigUrl = "http:" + info.OrigUrl;
-            //if (info.SampleUrl.StartsWith("//"))
-            //    info.SampleUrl = "http:" + info.SampleUrl;
-            //if (info.ThumbUrl.StartsWith("//"))
-            //    info.ThumbUrl = "http:" + info.ThumbUrl;
+            try
+            {
+                if (info.OrigUrl.StartsWith("//"))
+                    info.OrigUrl = "http:" + info.OrigUrl;
+                //if (info.SampleUrl.StartsWith("//"))
+                //    info.SampleUrl = "http:" + info.SampleUrl;
+                //if (info.ThumbUrl.StartsWith("//"))
+                //    info.ThumbUrl = "http:" + info.ThumbUrl;
 
-            if (info.OrigUrl != null && !info.OrigUrl.StartsWith("http://") && !info.OrigUrl.StartsWith("https://"))
-                info.OrigUrl = this.BaseURL + info.OrigUrl;
+                if (info.OrigUrl != null && !info.OrigUrl.StartsWith("http://") && !info.OrigUrl.StartsWith("https://"))
+                    info.OrigUrl = this.BaseURL + info.OrigUrl;
 
-            //if (info.SampleUrl != null && !info.SampleUrl.StartsWith("http://") && !info.SampleUrl.StartsWith("https://"))
-            //    info.SampleUrl = this.BaseURL + info.SampleUrl;
+                //if (info.SampleUrl != null && !info.SampleUrl.StartsWith("http://") && !info.SampleUrl.StartsWith("https://"))
+                //    info.SampleUrl = this.BaseURL + info.SampleUrl;
 
-            //if (info.ThumbUrl != null && !info.ThumbUrl.StartsWith("http://") && !info.ThumbUrl.StartsWith("https://"))
-            //    info.ThumbUrl = this.BaseURL + info.ThumbUrl;
+                //if (info.ThumbUrl != null && !info.ThumbUrl.StartsWith("http://") && !info.ThumbUrl.StartsWith("https://"))
+                //    info.ThumbUrl = this.BaseURL + info.ThumbUrl;
+            }
+            catch (Exception ex)
+            {
+
+                Base.ErrorReporting(ex);
+            }
         }
     }
 }

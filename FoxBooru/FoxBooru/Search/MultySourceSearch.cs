@@ -21,7 +21,10 @@ namespace FoxBooru.Search
                     foreach(var  eng in engines)
                     {
                         var imglst = eng.Search(option).ToArray();
-                        ap.AddRange(imglst);
+                        if (imglst != null)
+                        {
+                            ap.AddRange(imglst);
+                        }
                     }
                 }
 

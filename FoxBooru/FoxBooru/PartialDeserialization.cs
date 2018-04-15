@@ -1,4 +1,5 @@
 ﻿using FoxBooru.Models;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,10 @@ namespace FoxBooru
                 }
                 return ap;
                 }
+            catch(JsonReaderException)
+            {
+                return null;
+            }
             catch (Exception ex)
             {
 

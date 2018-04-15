@@ -124,6 +124,10 @@ namespace FoxBooru.Search
 
                     // info.EngineID = this.EngineID;
                     //info.Rating = Helper.ToRating(jsonObject.GetString("q"));
+                  if(info==null)
+                    {
+                        return null;
+                    }
                     linf.AddRange((ImageInfo[])info.ToArray());
 
                 }

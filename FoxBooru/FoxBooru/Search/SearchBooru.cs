@@ -18,7 +18,8 @@ namespace FoxBooru.Search
         private readonly string PageName;
         private readonly string LimitName;
 
-        public SearchBooru(string searchURL, string tagName, string pageName, string limitName, bool isJson)
+        public SearchBooru(string searchURL, string tagName, 
+            string pageName, string limitName, bool isJson)
         {
             try
             {
@@ -39,12 +40,12 @@ namespace FoxBooru.Search
             }
         }
 
-        internal override byte[] RequestBody(Models.SearchOption option)
+       public  override byte[] RequestBody(Models.SearchOption option)
         {
             return null;
         }
 
-        internal override Uri RequestURL(Models.SearchOption option)
+       public override Uri RequestURL(Models.SearchOption option)
         {
             try
             {
@@ -81,7 +82,8 @@ namespace FoxBooru.Search
             }
         }
 
-        internal override IList<ImageInfo> ParseData(string body, Models.SearchOption option)
+        public override IList<ImageInfo> ParseData(string body, 
+            Models.SearchOption option)
         {
             try
             { 

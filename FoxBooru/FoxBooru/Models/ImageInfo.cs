@@ -33,13 +33,13 @@ namespace FoxBooru.Models
 
 		public string	ThumbUrl		{ get; set; }
 		public int		ThumbWidth		{ get; set; }
-		public int		ThumbHeight		{ get; set; }
+		public int		ThumbHeight		{ get; set; }*/
 
 		public IList<string> TagsAll		{ get; set; }
 		public IList<string> TagsGeneral	{ get; set; }
 		public IList<string> TagsArtist		{ get; set; }
 		public IList<string> TagsCharacter	{ get; set; }
 		public IList<string> TagsCopyRight	{ get; set; }
-		public IList<string> TagsSource		{ get; set; }*/
+		public IList<string> TagsSource		{ get; set; }
 	}
 }

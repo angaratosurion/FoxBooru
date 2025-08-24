@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Text;
 using System.Net;
-using System.Runtime.Remoting.Messaging;
-using System.Threading;
 using FoxBooru.Models;
+using SearchOption = FoxBooru.Models.SearchOption;
 
 namespace FoxBooru
 {
@@ -33,7 +29,7 @@ namespace FoxBooru
 			set { this.m_webProxy = value; }
 		}
 
-        public IList<ImageInfo> Search(SearchOption option)
+        public IList<ImageInfo> Search(Models.SearchOption option)
         {
             try
             { 
@@ -63,11 +59,12 @@ namespace FoxBooru
                 return null;
             }
         }
-		public IAsyncResult BeginSearch(SearchOption option, AsyncCallback callBack)
+		public IAsyncResult BeginSearch(SearchOption option, 
+            AsyncCallback callBack)
 		{
 			return this.BeginSearch(option, callBack, null);
 		}
-        public IAsyncResult BeginSearch(SearchOption option, AsyncCallback callBack, object UserState)
+        public IAsyncResult BeginSearch(Models.SearchOption option, AsyncCallback callBack, object UserState)
         {
             try
             { 
@@ -184,9 +181,10 @@ namespace FoxBooru
             }
         }
 
-		internal abstract Uri RequestURL(SearchOption option);
-		internal abstract byte[] RequestBody(SearchOption option);
-        internal abstract IList<ImageInfo> ParseData(string body, SearchOption option);
+		public abstract Uri RequestURL(Models.SearchOption option);
+        public abstract byte[] RequestBody(Models.SearchOption option);
+        public abstract IList<ImageInfo> ParseData(string body, 
+            Models.SearchOption option);
         
 	}
 }

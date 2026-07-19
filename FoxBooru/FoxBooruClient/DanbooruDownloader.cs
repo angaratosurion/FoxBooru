@@ -14,7 +14,7 @@ namespace FoxBooruClient
         MultySourceSearch sImage = new FoxBooru.Search.MultySourceSearch();
 
 
-        public async Task<string> DownloadRandomimages(string charact)
+        public async Task DownloadImages(string charact)
         {
 
             try
@@ -30,10 +30,6 @@ namespace FoxBooruClient
                 {
                     string temp = Path.Combine(Path.GetDirectoryName
                         (Assembly.GetExecutingAssembly().Location), "Temp");
-                    //if (Directory.Exists(temp) == true)
-                    //{
-                    //    Directory.Delete(temp, true);
-                    //}
                     Directory.CreateDirectory(temp);
                     FoxBooru.Models.SearchOption sOption = new FoxBooru.Models.SearchOption(charact);
                     sOption.Rating = Ratings.All;
@@ -42,10 +38,6 @@ namespace FoxBooruClient
                         var list = sImage.Search(sOption);
 
 
-                        if (list == null || list.Count == 1)
-                        {
-                            return null;
-                        }
 
                         foundPosts.AddRange(list);
                         //if (list.Count == 1 && list[0] != null)
@@ -57,9 +49,9 @@ namespace FoxBooruClient
 
                     }
 
-                     
 
-                    
+
+
                     foreach (var a in foundPosts)
                     {
                     download:
@@ -72,7 +64,7 @@ namespace FoxBooruClient
                             var filen = a.md5;//match.Groups[1].Value + match.Groups[2].Value;
 
                             WebClient client = new WebClient();
-                           
+
                             var data = client.DownloadData(a.OrigUrl);
                             if (filen == null)
                             {
@@ -104,14 +96,56 @@ namespace FoxBooruClient
 
                 }
 
-                return ap;
+
 
             }
             catch (Exception ex)
             {
                 CommonTools.ErrorReporting(ex);
-                return null;
             }
+                 
+        }
+        public async Task  DownloadTagsAndSave(string charact)
+        {
+            try
+            {
+                List<ImageInfo> foundPosts = new List<ImageInfo>();
+                if (charact != null)
+                {
+                    string temp = Path.Combine(Path.GetDirectoryName
+                        (Assembly.GetExecutingAssembly().Location), "Temp");
+                    Directory.CreateDirectory(temp);
+                    FoxBooru.Models.SearchOption sOption = new FoxBooru.Models.SearchOption(charact);
+                    sOption.Rating = Ratings.All;
+                    //while (true)
+                    {
+                        var list = sImage.Search(sOption);
+
+
+
+                        foundPosts.AddRange(list);
+                        foreach (var a in foundPosts)
+                        {
+                            string filename = Path.Combine(temp, a.md5 + ".tag");
+                            var writet= File.CreateText(filename);
+                             foreach( var t in a.TagsAll)
+                            {
+                                writet.WriteLine(t);
+                            }
+                             writet.Flush();
+                            writet.Close();
+
+                        }
+                        
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonTools.ErrorReporting(ex);
+            }
+
         }
     }
 }

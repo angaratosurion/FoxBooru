@@ -6,8 +6,8 @@
         {
             DanbooruDownloader danbooruDownloader = new DanbooruDownloader(); 
             string cmd, argument,filename;
-             cmd = args[1];
-            argument = args[2];
+             cmd = args[0];
+            argument = args[1];
           //  filename = args[3];
             if (cmd == null)
             {

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FoxBooruClient": {
+      "commandName": "Project",
+      "commandLineArgs": "tags akeno_himejima"
+    }
+  }
+}

@@ -1,11 +1,14 @@
-﻿using System;
+﻿using FoxBooru.Models;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Xml;
 using System.IO;
-using FoxBooru.Models;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Text.Json.Serialization;
+using System.Xml;
 
 namespace FoxBooru
 {
@@ -262,5 +265,27 @@ namespace FoxBooru
 		{
 			return MakeTagList(node.GetString(key));
 		}
-	}
+	public static List<ApikKeyItem> GetApikKeys()
+        {
+            try
+            {
+                List<ApikKeyItem> apikKeys= new List<ApikKeyItem>();
+
+                string temp = Path.Combine(Path.GetDirectoryName
+                        (Assembly.GetExecutingAssembly().Location),
+                        "apikeylist.json");
+               apikKeys= JsonConvert.DeserializeObject<List<ApikKeyItem>>(File.ReadAllText(temp));
+
+
+
+                return apikKeys;
+
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
+        }
+    
+    }
 }

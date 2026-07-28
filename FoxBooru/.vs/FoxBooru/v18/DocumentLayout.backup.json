@@ -3,28 +3,12 @@
   "WorkspaceRootPath": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|g:\\cloudfolder\\nextcloud\\myprograms\\dotnet\\open source\\foxbooru\\foxbooru\\foxbooru\\apikeylist.josn||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|solutionrelative:foxbooru\\apikeylist.josn||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|g:\\cloudfolder\\nextcloud\\myprograms\\dotnet\\open source\\foxbooru\\foxbooru\\foxbooru\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|solutionrelative:foxbooru\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|g:\\cloudfolder\\nextcloud\\myprograms\\dotnet\\open source\\foxbooru\\foxbooru\\foxbooru\\models\\apikkeyitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|solutionrelative:foxbooru\\models\\apikkeyitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|g:\\cloudfolder\\nextcloud\\myprograms\\dotnet\\open source\\foxbooru\\foxbooru\\foxbooru\\search\\searchbooru.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|solutionrelative:foxbooru\\search\\searchbooru.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|g:\\cloudfolder\\nextcloud\\myprograms\\dotnet\\open source\\foxbooru\\foxbooru\\foxbooru\\search\\gelbooru.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|solutionrelative:foxbooru\\search\\gelbooru.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|g:\\cloudfolder\\nextcloud\\myprograms\\dotnet\\open source\\foxbooru\\foxbooru\\foxbooru\\search\\multysourcesearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|solutionrelative:foxbooru\\search\\multysourcesearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D2A919CC-6E93-4FDD-BC32-D46702B17C83}|FoxBooruClient\\FoxBooruClient.csproj|g:\\cloudfolder\\nextcloud\\myprograms\\dotnet\\open source\\foxbooru\\foxbooru\\foxbooruclient\\danboorudownloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,12 +19,24 @@
       "RelativeMoniker": "D:0:0:{D2A919CC-6E93-4FDD-BC32-D46702B17C83}|FoxBooruClient\\FoxBooruClient.csproj|solutionrelative:foxbooruclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|g:\\cloudfolder\\nextcloud\\myprograms\\dotnet\\open source\\foxbooru\\foxbooru\\foxbooru\\models\\searchoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|solutionrelative:foxbooru\\models\\searchoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|g:\\cloudfolder\\nextcloud\\myprograms\\dotnet\\open source\\foxbooru\\foxbooru\\foxbooru\\base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|solutionrelative:foxbooru\\base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|g:\\cloudfolder\\nextcloud\\myprograms\\dotnet\\open source\\foxbooru\\foxbooru\\foxbooru\\foxbooru.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|solutionrelative:foxbooru\\foxbooru.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|g:\\cloudfolder\\nextcloud\\myprograms\\dotnet\\open source\\foxbooru\\foxbooru\\foxbooru\\models\\engineids.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|solutionrelative:foxbooru\\models\\engineids.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|g:\\cloudfolder\\nextcloud\\myprograms\\dotnet\\open source\\foxbooru\\foxbooru\\foxbooru\\models\\apikkeyitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|solutionrelative:foxbooru\\models\\apikkeyitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|g:\\cloudfolder\\nextcloud\\myprograms\\dotnet\\open source\\foxbooru\\foxbooru\\foxbooru\\search\\gelbooru.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|solutionrelative:foxbooru\\search\\gelbooru.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|g:\\cloudfolder\\nextcloud\\myprograms\\dotnet\\open source\\foxbooru\\foxbooru\\foxbooru\\search\\multysourcesearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8EA4EFB-0B3B-4FCE-973C-0D7E47CC1D90}|FoxBooru\\FoxBooru.csproj|solutionrelative:foxbooru\\search\\multysourcesearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D2A919CC-6E93-4FDD-BC32-D46702B17C83}|FoxBooruClient\\FoxBooruClient.csproj|g:\\cloudfolder\\nextcloud\\myprograms\\dotnet\\open source\\foxbooru\\foxbooru\\foxbooruclient\\commontools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,65 +62,78 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "apikeylist.josn",
-              "DocumentMoniker": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooru\\apikeylist.josn",
-              "RelativeDocumentMoniker": "FoxBooru\\apikeylist.josn",
-              "ToolTip": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooru\\apikeylist.josn",
-              "RelativeToolTip": "FoxBooru\\apikeylist.josn",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-07-28T12:46:50.838Z",
+              "DocumentIndex": 4,
+              "Title": "Base.cs",
+              "DocumentMoniker": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooru\\Base.cs",
+              "RelativeDocumentMoniker": "FoxBooru\\Base.cs",
+              "ToolTip": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooru\\Base.cs",
+              "RelativeToolTip": "FoxBooru\\Base.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-28T12:55:49.889Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
+              "Title": "EngineIDs.cs",
+              "DocumentMoniker": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooru\\Models\\EngineIDs.cs",
+              "RelativeDocumentMoniker": "FoxBooru\\Models\\EngineIDs.cs",
+              "ToolTip": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooru\\Models\\EngineIDs.cs",
+              "RelativeToolTip": "FoxBooru\\Models\\EngineIDs.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-28T12:48:56.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Helper.cs",
               "DocumentMoniker": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooru\\Helper.cs",
               "RelativeDocumentMoniker": "FoxBooru\\Helper.cs",
               "ToolTip": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooru\\Helper.cs",
               "RelativeToolTip": "FoxBooru\\Helper.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAcBAAAAAAAAAAAzwBQBAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-28T12:46:04.015Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "ApikKeyItem.cs",
               "DocumentMoniker": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooru\\Models\\ApikKeyItem.cs",
               "RelativeDocumentMoniker": "FoxBooru\\Models\\ApikKeyItem.cs",
               "ToolTip": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooru\\Models\\ApikKeyItem.cs",
               "RelativeToolTip": "FoxBooru\\Models\\ApikKeyItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-28T12:44:52.117Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "SearchBooru.cs",
               "DocumentMoniker": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooru\\Search\\SearchBooru.cs",
               "RelativeDocumentMoniker": "FoxBooru\\Search\\SearchBooru.cs",
               "ToolTip": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooru\\Search\\SearchBooru.cs",
               "RelativeToolTip": "FoxBooru\\Search\\SearchBooru.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAcwBsAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-28T12:39:14.627Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Gelbooru.cs",
               "DocumentMoniker": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooru\\Search\\Gelbooru.cs",
               "RelativeDocumentMoniker": "FoxBooru\\Search\\Gelbooru.cs",
               "ToolTip": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooru\\Search\\Gelbooru.cs",
               "RelativeToolTip": "FoxBooru\\Search\\Gelbooru.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwA0AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-27T13:44:54.404Z",
               "EditorCaption": ""
@@ -132,18 +141,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "SearchOption.cs",
-              "DocumentMoniker": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooru\\Models\\SearchOption.cs",
-              "RelativeDocumentMoniker": "FoxBooru\\Models\\SearchOption.cs",
-              "ToolTip": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooru\\Models\\SearchOption.cs",
-              "RelativeToolTip": "FoxBooru\\Models\\SearchOption.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-27T13:41:58.291Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "MultySourceSearch.cs",
               "DocumentMoniker": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooru\\Search\\MultySourceSearch.cs",
               "RelativeDocumentMoniker": "FoxBooru\\Search\\MultySourceSearch.cs",
@@ -151,22 +148,12 @@
               "RelativeToolTip": "FoxBooru\\Search\\MultySourceSearch.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAEwCUAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-27T13:40:45.966Z"
+              "WhenOpened": "2026-07-27T13:40:45.966Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "FoxBooru",
-              "DocumentMoniker": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooru\\FoxBooru.csproj",
-              "RelativeDocumentMoniker": "FoxBooru\\FoxBooru.csproj",
-              "ToolTip": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooru\\FoxBooru.csproj",
-              "RelativeToolTip": "FoxBooru\\FoxBooru.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-07-27T13:38:16.812Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "CommonTools.cs",
               "DocumentMoniker": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooruClient\\CommonTools.cs",
               "RelativeDocumentMoniker": "FoxBooruClient\\CommonTools.cs",
@@ -174,31 +161,34 @@
               "RelativeToolTip": "FoxBooruClient\\CommonTools.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAkwDMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-19T13:51:52.047Z"
+              "WhenOpened": "2026-07-19T13:51:52.047Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooruClient\\Program.cs",
               "RelativeDocumentMoniker": "FoxBooruClient\\Program.cs",
               "ToolTip": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooruClient\\Program.cs",
               "RelativeToolTip": "FoxBooruClient\\Program.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAlwBwAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAlwB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-19T13:48:51.177Z"
+              "WhenOpened": "2026-07-19T13:48:51.177Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "DanbooruDownloader.cs",
               "DocumentMoniker": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooruClient\\DanbooruDownloader.cs",
               "RelativeDocumentMoniker": "FoxBooruClient\\DanbooruDownloader.cs",
               "ToolTip": "G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooruClient\\DanbooruDownloader.cs",
               "RelativeToolTip": "FoxBooruClient\\DanbooruDownloader.cs",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAAAHgAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAqwHIAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-19T13:49:51.948Z"
+              "WhenOpened": "2026-07-19T13:49:51.948Z",
+              "EditorCaption": ""
             }
           ]
         }

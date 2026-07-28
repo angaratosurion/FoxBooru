@@ -1,5 +1,6 @@
 ﻿using FoxBooru.Models;
 using FoxBooru.Search;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -118,26 +119,39 @@ namespace FoxBooruClient
                     FoxBooru.Models.SearchOption sOption = 
                         new FoxBooru.Models.SearchOption(charact);
                     sOption.Rating = Ratings.All;
+                    sOption.Limit = 20000;
                     //while (true)
                     {
                         var list = sImage.Search(sOption);
 
 
-
+                        string filename = Path.Combine(temp, charact + ".tag");
                         foundPosts.AddRange(list);
+                        List<FileTagItem> fileTags = new List<FileTagItem>();
+                        var writet = File.CreateText(filename);
                         foreach (var a in foundPosts)
                         {
-                            string filename = Path.Combine(temp, a.md5 + ".tag");
-                            var writet= File.CreateText(filename);
-                             foreach( var t in a.TagsAll)
-                            {
-                                writet.Write(a.TagsAll);
-                            }
-                             writet.Flush();
-                            writet.Close();
+                           // string filename = Path.Combine(temp, a.md5 + ".tag");
+                            
+                            List<string> tags = a.TagsAll.Split(",").ToList();
+                            // foreach( var t in a.TagsAll)
+                            //{
+                            //    writet.Write(a.TagsAll);
+                            //}
+                            FileTagItem fileTagItem = new FileTagItem();
+                            fileTagItem.Tags = tags;
+                            fileTagItem.MD5 = a.md5;
+                            fileTagItem.Extention = a.Extention;
+                            fileTags.Add(fileTagItem);
+                           
 
                         }
-                        
+                        var json = JsonConvert.SerializeObject(fileTags,
+                               Formatting.Indented);
+                        writet.WriteLine(json);
+                        writet.Flush();
+                        writet.Close();
+
 
                     }
                 }

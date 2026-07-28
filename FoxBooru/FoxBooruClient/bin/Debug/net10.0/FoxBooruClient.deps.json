@@ -9,7 +9,8 @@
       "FoxBooruClient/1.0.0": {
         "dependencies": {
           "FoxBooru": "1.0.0",
-          "NLog": "6.1.4"
+          "NLog": "6.1.4",
+          "TagLibSharp2": "0.6.0"
         },
         "runtime": {
           "FoxBooruClient.dll": {}
@@ -173,6 +174,14 @@
           }
         }
       },
+      "TagLibSharp2/0.6.0": {
+        "runtime": {
+          "lib/net10.0/TagLibSharp2.dll": {
+            "assemblyVersion": "0.6.0.0",
+            "fileVersion": "0.6.0.0"
+          }
+        }
+      },
       "FoxBooru/1.0.0": {
         "dependencies": {
           "NLog": "6.1.4",
@@ -257,6 +266,13 @@
       "sha512": "sha512-ULfGNl75BNXkpF42wNV2CDXJ64dUZZEa8xO2mBsc4tqbW9QjruxjEB6bAr4Z/T1rNU+leOztIjCJQYsBGFWYlw==",
       "path": "system.servicemodel.primitives/10.0.652802",
       "hashPath": "system.servicemodel.primitives.10.0.652802.nupkg.sha512"
+    },
+    "TagLibSharp2/0.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OFP5hAYktGrxT9Mqc6cEv9Ogg9uShRUTN6VdBfX7BRJM+30kkHcXmjlL/uFVUqx9xJt1Eb8A/o9EaSFKcwVH8g==",
+      "path": "taglibsharp2/0.6.0",
+      "hashPath": "taglibsharp2.0.6.0.nupkg.sha512"
     },
     "FoxBooru/1.0.0": {
       "type": "project",

@@ -10,7 +10,7 @@ namespace FoxBooru.Search
 {
     public class MultySourceSearch
     {
-        SearchBooru[] engines = { new Danbooru() };//, new Gelbooru(), new Konachan(),  new Yandere() };
+        SearchBooru[] engines = { new Danbooru() , new Gelbooru(), new Konachan(),  new Yandere() };
     public List<ImageInfo> Search (SearchOption option)
         {
             try
@@ -21,7 +21,8 @@ namespace FoxBooru.Search
                     ap = new List<ImageInfo>();
                     foreach(var  eng in engines)
                     {
-                        var imglst = eng.Search(option).ToArray();
+                        var imglst = eng.Search(option);
+
                         if (imglst != null)
                         {
                             ap.AddRange(imglst);

@@ -41,6 +41,8 @@ namespace FoxBooru
                             img.OrigHeight = resuls.Value<int>("height");
                             img.OrigUrl = resuls.Value<String>("file_url");
                             img.TagsAll= resuls.Value<String>("tag_string");
+                            //file_ext
+                            img.Extention = resuls.Value<String>("file_ext");
                             ap.Add(img);
 
                         }

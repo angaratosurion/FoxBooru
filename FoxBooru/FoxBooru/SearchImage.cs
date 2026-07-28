@@ -36,31 +36,33 @@ namespace FoxBooru
             { 
             Uri uriRequest = this.RequestURL(option);
             byte[] uriBody = this.RequestBody(option);
+                string body=null;
 
-            HttpWebRequest wReq = WebRequest.Create(this.RequestURL(option)) as HttpWebRequest;
-
-                wReq.UserAgent = "FoxBorouClient";
 
                var  keyItem = Helper.GetApikKey(Engine);
                 if (keyItem != null && !string.IsNullOrEmpty(keyItem.username) && !string.IsNullOrEmpty(keyItem.Apikey))
                 {
+                    HttpWebRequest wReq = WebRequest.Create(this.RequestURL(option)) as HttpWebRequest;
+
+                    wReq.UserAgent = "FoxBorouClient";
                     string credentials = $"{keyItem.username}:{keyItem.Apikey}";
                     string base64Auth = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(credentials));
                     wReq.Headers["Authorization"] = "Basic " + base64Auth;
-                }
 
-                wReq.Method = (uriBody != null) ? "POST" : "GET";
-            if (uriBody != null)
-            {
-                wReq.ContentType = "application/x-www-form-urlencoded";
-                wReq.GetRequestStream().Write(uriBody, 0, uriBody.Length);
-            }
 
-            HttpWebResponse wRes = wReq.GetResponse() as HttpWebResponse;
+                    wReq.Method = (uriBody != null) ? "POST" : "GET";
+                    if (uriBody != null)
+                    {
+                        wReq.ContentType = "application/x-www-form-urlencoded";
+                        wReq.GetRequestStream().Write(uriBody, 0, uriBody.Length);
+                    }
 
-            string body = Helper.StringFromStream(wRes.GetResponseStream());
+                    HttpWebResponse wRes = wReq.GetResponse() as HttpWebResponse;
 
-            wRes.Close();
+                     body = Helper.StringFromStream(wRes.GetResponseStream());
+
+                    wRes.Close();
+                } 
 
             return this.ParseData(body, option);
         }

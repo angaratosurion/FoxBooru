@@ -105,6 +105,10 @@ namespace FoxBooru.Search
         {
             try
             {
+                 if (body==null)
+                {
+                    return null;
+                }
                 List<ImageInfo> lstResult = new List<ImageInfo>();
 
                 //  JsonTextReader reader = new JsonTextReader(new StringReader(body));
@@ -232,6 +236,10 @@ namespace FoxBooru.Search
         {
             try
             {
+                 if (info.OrigUrl== null)
+                {
+                    return;
+                }
                 if (info.OrigUrl.StartsWith("//"))
                     info.OrigUrl = "http:" + info.OrigUrl;
                 //if (info.SampleUrl.StartsWith("//"))

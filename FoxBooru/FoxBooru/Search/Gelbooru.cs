@@ -10,7 +10,8 @@ namespace FoxBooru.Search
 		public override int EngineID { get { return EngineIDs.eGelbooru; } }
 
 		public Gelbooru()
-			: base("http://www.gelbooru.com/index.php?page=dapi&s=post&q=index&json=1", "tags", "pid", "limit", true)
+			: base("http://www.gelbooru.com/index.php?page=dapi&s=post&q=index&json=1", 
+				  "tags", "pid", "limit", true)
 		{
 		}
 	}

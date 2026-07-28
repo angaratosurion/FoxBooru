@@ -8,8 +8,9 @@ namespace FoxBooru
 	public abstract class SearchImage
 	{
 		public abstract int EngineID { get; }
+        public abstract string  Engine { get; }
 
-		private IWebProxy m_webProxy;
+        private IWebProxy m_webProxy;
 		private Encoding m_Encoding;
 
 		public SearchImage()
@@ -37,7 +38,18 @@ namespace FoxBooru
             byte[] uriBody = this.RequestBody(option);
 
             HttpWebRequest wReq = WebRequest.Create(this.RequestURL(option)) as HttpWebRequest;
-            wReq.Method = (uriBody != null) ? "POST" : "GET";
+
+                wReq.UserAgent = "FoxBorouClient";
+
+               var  keyItem = Helper.GetApikKey(Engine);
+                if (keyItem != null && !string.IsNullOrEmpty(keyItem.username) && !string.IsNullOrEmpty(keyItem.Apikey))
+                {
+                    string credentials = $"{keyItem.username}:{keyItem.Apikey}";
+                    string base64Auth = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(credentials));
+                    wReq.Headers["Authorization"] = "Basic " + base64Auth;
+                }
+
+                wReq.Method = (uriBody != null) ? "POST" : "GET";
             if (uriBody != null)
             {
                 wReq.ContentType = "application/x-www-form-urlencoded";
@@ -59,53 +71,55 @@ namespace FoxBooru
                 return null;
             }
         }
-		public IAsyncResult BeginSearch(SearchOption option, 
-            AsyncCallback callBack)
-		{
-			return this.BeginSearch(option, callBack, null);
-		}
-        public IAsyncResult BeginSearch(Models.SearchOption option, AsyncCallback callBack, object UserState)
-        {
-            try
-            { 
-            Uri uriRequest = this.RequestURL(option);
-            byte[] uriBody = this.RequestBody(option);
+		//public IAsyncResult BeginSearch(SearchOption option, 
+  //          AsyncCallback callBack)
+		//{
+		//	return this.BeginSearch(option, callBack, null);
+		//}
+  //      public IAsyncResult BeginSearch(Models.SearchOption option, 
+  //          AsyncCallback callBack, object UserState)
+  //      {
+  //          try
+  //          { 
+  //          Uri uriRequest = this.RequestURL(option);
+  //          byte[] uriBody = this.RequestBody(option);
 
-            ApiResult asyncApi = new ApiResult();
+  //          ApiResult asyncApi = new ApiResult();
 
-            asyncApi.apiObject = new ApiObject();
-            asyncApi.apiObject.callback = callBack;
-            asyncApi.apiObject.option = option;
-            asyncApi.apiObject.userState = UserState;
+  //          asyncApi.apiObject = new ApiObject();
+  //          asyncApi.apiObject.callback = callBack;
+  //          asyncApi.apiObject.option = option;
+  //          asyncApi.apiObject.userState = UserState;
 
-            asyncApi.apiObject.hwReq = WebRequest.Create(this.RequestURL(option)) as HttpWebRequest;
-            asyncApi.apiObject.hwReq.Method = (uriBody != null) ? "POST" : "GET";
-            if (uriBody != null)
-            {
-                asyncApi.apiObject.hwReq.ContentType = "application/x-www-form-urlencoded";
-                asyncApi.apiObject.hwReq.GetRequestStream().Write(uriBody, 0, uriBody.Length);
-            }
+  //          asyncApi.apiObject.hwReq = WebRequest.Create(this.RequestURL(option)) as HttpWebRequest;
+  //          asyncApi.apiObject.hwReq.Method = (uriBody != null) ? "POST" : "GET";
+  //          if (uriBody != null)
+  //          {
+                     
+  //              asyncApi.apiObject.hwReq.ContentType = "application/x-www-form-urlencoded";
+  //              asyncApi.apiObject.hwReq.GetRequestStream().Write(uriBody, 0, uriBody.Length);
+  //          }
 
-            asyncApi.apiObject.asyncHttp = asyncApi.apiObject.hwReq.BeginGetResponse(RequestCallback, asyncApi.apiObject);
+  //          asyncApi.apiObject.asyncHttp = asyncApi.apiObject.hwReq.BeginGetResponse(RequestCallback, asyncApi.apiObject);
 
-            asyncApi.manualEvent = new ManualResetEvent(false);
+  //          asyncApi.manualEvent = new ManualResetEvent(false);
 
-            asyncApi.AsyncState = UserState;
-            asyncApi.IsCompleted = false;
-            asyncApi.CompletedSynchronously = false;
+  //          asyncApi.AsyncState = UserState;
+  //          asyncApi.IsCompleted = false;
+  //          asyncApi.CompletedSynchronously = false;
 
+                
+  //          asyncApi.apiObject.asyncApi = asyncApi;
 
-            asyncApi.apiObject.asyncApi = asyncApi;
+  //          return asyncApi;
+  //      }
+  //       catch (Exception ex)
+  //          {
 
-            return asyncApi;
-        }
-         catch (Exception ex)
-            {
-
-                Base.ErrorReporting(ex);
-                return null;
-            }
-        }
+  //              Base.ErrorReporting(ex);
+  //              return null;
+  //          }
+  //      }
         public SearchResult EndSearch(IAsyncResult asyncResult)
         {
             try

@@ -7,17 +7,17 @@ namespace FoxBooru.Models
 {
 	public static class EngineIDs
 	{
-		public const int eYandere		= 0;
-		public const int eSafebooru		= 1;
-		public const int eDanbooru		= 2;
-		public const int eGelbooru		= 3;
-		public const int eKonachan		= 4;
-		public const int eXbooru		= 5;
-		public const int eRule34		= 6;
-		public const int eFurry			= 7;
-		public const int eChanSankaku	= 8;
-		public const int eIdolSankaku	= 9;
-        public const int eEShuushuu = 10;
+		public const int Yandere		= 0;
+		public const int Safebooru		= 1;
+		public const int Danbooru		= 2;
+		public const int Gelbooru		= 3;
+		public const int Konachan		= 4;
+		public const int Xbooru		= 5;
+		public const int Rule34		= 6;
+		public const int Furry			= 7;
+		public const int ChanSankaku	= 8;
+		public const int IdolSankaku	= 9;
+        public const int Shuushuu = 10;
         public const int sizebooru = 11;
 
     }

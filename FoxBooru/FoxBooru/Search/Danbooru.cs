@@ -7,9 +7,11 @@ namespace FoxBooru.Search
 	
 	public class Danbooru : SearchBooru
 	{
-		public override int EngineID { get { return EngineIDs.eDanbooru; } }
+		public override int EngineID { get { return EngineIDs.Danbooru; } }
 
-		public Danbooru()
+        public override string Engine { get { return "Danbooru"; } }
+
+        public Danbooru()
 			: base("http://danbooru.donmai.us/posts.json", "tags", "page", "limit", true)
 		{
 		}

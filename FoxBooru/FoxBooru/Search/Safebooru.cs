@@ -7,9 +7,11 @@ namespace FoxBooru.Search
 
 	public class Safebooru : SearchBooru
 	{
-		public override int EngineID { get { return EngineIDs.eSafebooru; } }
+		public override int EngineID { get { return EngineIDs.Safebooru; } }
 
-		public Safebooru()
+        public override string  Engine { get { return "Safebooru"; } }
+
+        public Safebooru()
 			: base("http://safebooru.org/index.php?page=dapi&s=post&q=index", "tags", "pid", "limit", false)
 		{
 		}

@@ -7,9 +7,10 @@ namespace FoxBooru.Search
 
 	public class Furry : SearchBooru
 	{
-		public override int EngineID { get { return EngineIDs.eFurry; } }
+		public override int EngineID { get { return EngineIDs.Furry; } }
 
-		public Furry()
+        public override string Engine { get { return "Furry"; } }
+        public Furry()
 			: base("http://furry.booru.org/index.php?page=dapi&s=post&q=index", "tag", "pid", "limit", false)
 		{
 		}

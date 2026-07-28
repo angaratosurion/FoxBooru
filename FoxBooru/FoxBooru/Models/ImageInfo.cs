@@ -35,7 +35,7 @@ namespace FoxBooru.Models
 		public int		ThumbWidth		{ get; set; }
 		public int		ThumbHeight		{ get; set; }*/
 
-		public IList<string> TagsAll		{ get; set; }
+		public string TagsAll		{ get; set; }
 		public IList<string> TagsGeneral	{ get; set; }
 		public IList<string> TagsArtist		{ get; set; }
 		public IList<string> TagsCharacter	{ get; set; }

@@ -283,6 +283,30 @@ namespace FoxBooru
             }
             catch(Exception e)
             {
+                Base.ErrorReporting(
+                    e);
+                return null;
+            }
+        }
+        public static ApikKeyItem GetApikKey(String Enginename)
+        {
+            try
+            {
+                ApikKeyItem apikKey=null;
+                var list = GetApikKeys();
+                if (list != null && list.Count > 0)
+                {
+                    apikKey= list.FirstOrDefault(x=>x.Engine==Enginename)   ;
+                }
+
+
+                return apikKey;
+
+            }
+            catch (Exception e)
+            {
+                Base.ErrorReporting(
+                                    e);
                 return null;
             }
         }

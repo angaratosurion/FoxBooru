@@ -115,7 +115,8 @@ namespace FoxBooruClient
                     string temp = Path.Combine(Path.GetDirectoryName
                         (Assembly.GetExecutingAssembly().Location), "Temp");
                     Directory.CreateDirectory(temp);
-                    FoxBooru.Models.SearchOption sOption = new FoxBooru.Models.SearchOption(charact);
+                    FoxBooru.Models.SearchOption sOption = 
+                        new FoxBooru.Models.SearchOption(charact);
                     sOption.Rating = Ratings.All;
                     //while (true)
                     {
@@ -130,7 +131,7 @@ namespace FoxBooruClient
                             var writet= File.CreateText(filename);
                              foreach( var t in a.TagsAll)
                             {
-                                writet.WriteLine(t);
+                                writet.Write(a.TagsAll);
                             }
                              writet.Flush();
                             writet.Close();

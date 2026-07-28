@@ -10,7 +10,8 @@ namespace FoxBooru.Search
     public class sizebooru : SearchBooru
     {
 
-        public override int EngineID { get { return EngineIDs.eRule34; } }
+        public override int EngineID { get { return EngineIDs.Rule34; } }
+        public override string  Engine { get { return "sizebooru"; } }
         public sizebooru()
 			: base("http://size.booru.org/index.php?page=dapi&s=post&q=index", "tag", "pid", "limit", false)
 		{

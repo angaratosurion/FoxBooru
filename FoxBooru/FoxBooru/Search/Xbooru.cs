@@ -7,9 +7,10 @@ namespace FoxBooru.Search
 
 	public class Xbooru : SearchBooru
 	{
-		public override int EngineID { get { return EngineIDs.eXbooru; } }
+		public override int EngineID { get { return EngineIDs.Xbooru; } }
+        public override string  Engine { get { return "Xbooru"; } }
 
-		public Xbooru()
+        public Xbooru()
 			: base("http://xbooru.com/index.php?page=dapi&s=post&q=index", "tags", "pid", "limit", false)
 		{
 		}

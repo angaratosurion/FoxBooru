@@ -161,6 +161,7 @@ namespace FoxBooru.Search
                         }
 
                         info.EngineID = this.EngineID;
+                        info.Engine = this.Engine;
 
 
                         this.CheckURL((ImageInfo)info);

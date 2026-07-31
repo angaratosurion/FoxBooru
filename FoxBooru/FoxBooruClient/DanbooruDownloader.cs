@@ -1,4 +1,5 @@
-﻿using FoxBooru.Models;
+﻿using FoxBooru;
+using FoxBooru.Models;
 using FoxBooru.Search;
 using Newtonsoft.Json;
 using System;
@@ -7,6 +8,8 @@ using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
+using TagLib.Id3v2;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FoxBooruClient
 {
@@ -34,7 +37,7 @@ namespace FoxBooruClient
                     Directory.CreateDirectory(temp);
                     FoxBooru.Models.SearchOption sOption = new FoxBooru.Models.SearchOption(charact);
                     sOption.Rating = Ratings.All;
-                    //while (true)
+                   // while (true)
                     {
                         var list = sImage.Search(sOption);
 
@@ -64,19 +67,41 @@ namespace FoxBooruClient
                             Match match = new Regex(@"(.*?)(\.[a-z,0-5]{0,5})", RegexOptions.Singleline).Match(imageLinkShortened);
                             var filen = a.md5;//match.Groups[1].Value + match.Groups[2].Value;
 
-                            WebClient client = new WebClient();
+                            HttpClient client = new HttpClient();
+                            client.DefaultRequestHeaders.UserAgent.ParseAdd("FoxBorouClient");
+                            var keyItem = Helper.GetApikKey(a.Engine);
 
-                            var data = client.DownloadData(a.OrigUrl);
+                            if (!string.IsNullOrEmpty(keyItem.username) &&
+                            !string.IsNullOrEmpty(keyItem.Apikey))
+                            {
+                                var authToken = Convert.ToBase64String
+                                (System.Text.Encoding.UTF8.GetBytes($"{keyItem.username}:{keyItem.Apikey}"));
+                                client.DefaultRequestHeaders.Authorization =
+                                    new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", authToken);
+                            }
+                            var response = await client.GetAsync(a.OrigUrl, HttpCompletionOption.ResponseHeadersRead);
+                              response.EnsureSuccessStatusCode();
+
+                            
+                            //DownloadData(a.OrigUrl);
                             if (filen == null)
                             {
-                                filen = CommonTools.getHash(data);
+                                filen = a.md5;
                             }
-                            string filename = temp + "\\" + filen + "." + a.OrigUrl.Substring(a.OrigUrl.LastIndexOf("."));
+                            string filename = temp + "\\" + filen + "." + 
+                                a.Extention;
                             //var data = a.DownloadFullImage(imageLink, out bool wasRedirected, false, sizeLimit);
-                            File.WriteAllBytes(filename, data);
-                            ap = filename;
+                            FileStream fileStream = new FileStream(filename,
+                                FileMode.Create);
+                            await response.Content.CopyToAsync(fileStream);
+                            //File.WriteAllBytes(filename, data);
+                            
+                          //  fileStream.Close();
 
+                            ap = filename;
                         }
+                        
+
                         catch (UriFormatException ex)
                         {
                             CommonTools.ErrorReporting(ex);

@@ -10,6 +10,8 @@ namespace FoxBooru.Models
 	{
         [JsonIgnore]
         public int		EngineID		{ get; set; }
+        [JsonIgnore]
+        public  string  Engine { get; set; }
         public string Id { get; set; }
         
         

@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             DanbooruDownloader danbooruDownloader = new DanbooruDownloader(); 
             ImageTager imageTager = new ImageTager();
@@ -21,7 +21,7 @@
             {
                 if (argument != null)
                 {
-                    danbooruDownloader.DownloadImages(argument);
+                    await danbooruDownloader.DownloadImages(argument);
                 }
             }
             else if (cmd == "tags")

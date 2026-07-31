@@ -2,7 +2,11 @@
   "profiles": {
     "FoxBooruClient": {
       "commandName": "Project",
-      "commandLineArgs": "tags himejima_akeno"
+      "commandLineArgs": "download himejima_akeno"
+    },
+    "Profile 1": {
+      "commandName": "Project",
+      "commandLineArgs": "mark \"G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooruClient\\bin\\Debug\\net10.0\\Temp\\himejima_akeno.tag\"  \"G:\\CloudFolder\\NextCloud\\MyPrograms\\dotNet\\Open Source\\FoxBooru\\FoxBooru\\FoxBooruClient\\bin\\Debug\\net10.0\\Temp\""
     }
   }
 }

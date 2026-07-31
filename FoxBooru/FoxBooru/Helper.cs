@@ -12,7 +12,7 @@ using System.Xml;
 
 namespace FoxBooru
 {
-    internal static class Helper
+   public static class Helper
 	{
 		private static readonly DateTime DateTime1970 = new DateTime(1970, 1, 1, 0, 0, 0);
 		public static DateTime ParseDateTime(long date)

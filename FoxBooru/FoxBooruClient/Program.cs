@@ -5,9 +5,11 @@
         static void Main(string[] args)
         {
             DanbooruDownloader danbooruDownloader = new DanbooruDownloader(); 
-            string cmd, argument,filename;
+            ImageTager imageTager = new ImageTager();
+            string cmd, argument,filename,argeument2;
              cmd = args[0];
             argument = args[1];
+            
           //  filename = args[3];
             if (cmd == null)
             {
@@ -27,6 +29,15 @@
                 if (argument != null )
                 {
                     danbooruDownloader.DownloadTagsAndSave(argument);
+                }
+            }
+            else if (cmd =="mark")
+            {
+                if (argument != null  && (args[2]!=null))
+                {
+                      argeument2= args[2];
+                    imageTager.TagImages(argument, argeument2);
+
                 }
             }
 

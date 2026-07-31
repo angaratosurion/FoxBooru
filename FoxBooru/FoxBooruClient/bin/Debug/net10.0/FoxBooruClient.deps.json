@@ -10,7 +10,7 @@
         "dependencies": {
           "FoxBooru": "1.0.0",
           "NLog": "6.1.4",
-          "TagLibSharp2": "0.6.0"
+          "TagLibSharp": "2.3.0"
         },
         "runtime": {
           "FoxBooruClient.dll": {}
@@ -174,11 +174,11 @@
           }
         }
       },
-      "TagLibSharp2/0.6.0": {
+      "TagLibSharp/2.3.0": {
         "runtime": {
-          "lib/net10.0/TagLibSharp2.dll": {
-            "assemblyVersion": "0.6.0.0",
-            "fileVersion": "0.6.0.0"
+          "lib/netstandard2.0/TagLibSharp.dll": {
+            "assemblyVersion": "2.3.0.0",
+            "fileVersion": "2.3.0.0"
           }
         }
       },
@@ -267,12 +267,12 @@
       "path": "system.servicemodel.primitives/10.0.652802",
       "hashPath": "system.servicemodel.primitives.10.0.652802.nupkg.sha512"
     },
-    "TagLibSharp2/0.6.0": {
+    "TagLibSharp/2.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-OFP5hAYktGrxT9Mqc6cEv9Ogg9uShRUTN6VdBfX7BRJM+30kkHcXmjlL/uFVUqx9xJt1Eb8A/o9EaSFKcwVH8g==",
-      "path": "taglibsharp2/0.6.0",
-      "hashPath": "taglibsharp2.0.6.0.nupkg.sha512"
+      "sha512": "sha512-Qo4z6ZjnIfbR3Us1Za5M2vQ97OWZPmODvVmepxZ8XW0UIVLGdO2T63/N3b23kCcyiwuIe0TQvMEQG8wUCCD1mA==",
+      "path": "taglibsharp/2.3.0",
+      "hashPath": "taglibsharp.2.3.0.nupkg.sha512"
     },
     "FoxBooru/1.0.0": {
       "type": "project",

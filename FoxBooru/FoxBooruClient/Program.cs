@@ -13,7 +13,14 @@
           //  filename = args[3];
             if (cmd == null)
             {
+                string helpmnge = "download  { tag}  to download images for this tag \n" +
+                    "tags {character} to search for images and save its tags to a file\n" +
+                    "mark {ptagfile} {image directory} to tag the fiels in the given " +
+                    "directory weith tags " +
+                    "included in the file";
 
+
+                Console.WriteLine(helpmnge);
                
 
             }
